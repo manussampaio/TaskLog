@@ -11,33 +11,21 @@ import {
 import { MaterialIcons } from '@expo/vector-icons';
 
 export default function TaskInputField(props) {
-
   const [titulo, setTitulo] = useState('');
   const [descricao, setDescricao] = useState('');
-
-  function handleAddTask() {
-
-    props.addTask(
-      titulo,
-      descricao
-    );
+  
+  function handleAddTask() { 
+    props.addTask(titulo, descricao);
 
     setTitulo('');
     setDescricao('');
-
   }
 
   return (
-
     <KeyboardAvoidingView
-      behavior={
-        Platform.OS === 'ios'
-          ? 'padding'
-          : 'height'
-      }
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
       style={styles.container}
     >
-
       <TextInput
         style={styles.input}
         placeholder="Título da atividade"
@@ -45,7 +33,6 @@ export default function TaskInputField(props) {
         value={titulo}
         onChangeText={setTitulo}
       />
-
       <TextInput
         style={styles.input}
         placeholder="Descrição"
@@ -53,7 +40,6 @@ export default function TaskInputField(props) {
         value={descricao}
         onChangeText={setDescricao}
       />
-
       <TouchableOpacity
         style={styles.button}
         onPress={handleAddTask}
@@ -64,19 +50,15 @@ export default function TaskInputField(props) {
           color="#fff"
         />
       </TouchableOpacity>
-
     </KeyboardAvoidingView>
-
   );
 }
 
 const styles = StyleSheet.create({
-
   container: {
     padding: 10,
     backgroundColor: '#1E293B',
   },
-
   input: {
     backgroundColor: '#334155',
     color: '#fff',
@@ -84,7 +66,6 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 8,
   },
-
   button: {
     backgroundColor: '#2563EB',
     alignItems: 'center',
@@ -92,5 +73,4 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 8,
   },
-
 });
