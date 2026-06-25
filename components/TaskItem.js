@@ -4,40 +4,30 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from 'react-native';
-
 import {
   MaterialIcons,
 } from '@expo/vector-icons';
 
 export default function TaskItem(props) {
-
   return (
-
     <View style={styles.container}>
-
       <View style={styles.numero}>
         <Text style={styles.numeroTexto}>
           {props.index}
         </Text>
       </View>
-
-      <View style={styles.card}>
-
+      
+    <View style={styles.card}>
         <View style={{ flex: 1 }}>
-
           <Text style={styles.titulo}>
             {props.task.task}
           </Text>
-
           <Text style={styles.descricao}>
             {props.task.descricao}
           </Text>
-
         </View>
 
-        <TouchableOpacity
-          onPress={props.completeTask}
-        >
+        <TouchableOpacity onPress={props.completeTask}>
           <MaterialIcons
             name="check-circle"
             size={28}
@@ -45,9 +35,7 @@ export default function TaskItem(props) {
           />
         </TouchableOpacity>
 
-        <TouchableOpacity
-          onPress={props.deleteTask}
-        >
+        <TouchableOpacity onPress={props.deleteTask}>
           <MaterialIcons
             name="delete"
             size={28}
@@ -56,19 +44,16 @@ export default function TaskItem(props) {
         </TouchableOpacity>
 
       </View>
-
     </View>
 
   );
 }
 
 const styles = StyleSheet.create({
-
   container: {
     flexDirection: 'row',
     margin: 10,
   },
-
   numero: {
     width: 50,
     height: 50,
@@ -78,12 +63,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginRight: 10,
   },
-
   numeroTexto: {
     color: '#fff',
     fontWeight: 'bold',
   },
-
   card: {
     flex: 1,
     backgroundColor: '#1E293B',
@@ -93,14 +76,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10,
   },
-
   titulo: {
     color: '#fff',
     fontWeight: 'bold',
   },
-
   descricao: {
     color: '#CBD5E1',
   },
-
 });
